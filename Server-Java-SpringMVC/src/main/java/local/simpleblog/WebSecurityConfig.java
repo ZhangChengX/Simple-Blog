@@ -13,12 +13,14 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
-    
+	
     @Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
+			.cors().and().csrf().disable()
 			.authorizeHttpRequests((requests) -> requests
-				.antMatchers("/", "/index.html", "/page/**", "/api/user/**").permitAll()
+				// .antMatchers("/", "/index.html", "/page/**", "/api/user/**").permitAll()
+				.antMatchers("/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.formLogin((form) -> form
@@ -35,8 +37,8 @@ public class WebSecurityConfig {
 	public UserDetailsService userDetailsService() {
 		UserDetails user =
 			 User.withDefaultPasswordEncoder()
-				.username("chengzhang")
-				.password("test")
+				.username("testuser")
+				.password("testpasswd")
 				.roles("USER")
 				.build();
 
