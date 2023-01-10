@@ -18,6 +18,9 @@ public interface UserMapper {
     @Select("SELECT * FROM user where id = #{id}")
     User getById(@Param("id") int id);
 
+    @Select("SELECT * FROM user where username = #{username}")
+    User getByUsername(@Param("username") String username);
+
     @Insert("INSERT INTO user (username,password) VALUES (#{username},#{password})")
     int add(User user);
 
