@@ -34,6 +34,8 @@ User login, logout, page management, client-side rendering and fetching data fro
 
 ## Implementation
 
+### Server
+
 - [ ] C#
 - [x] Java
 - [ ] Python
@@ -42,3 +44,9 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [ ] Rust
 - [ ] Go
 
+### Client
+
+- [ ] React
+- [ ] Solid
+- [ ] Svelte
+- [ ] Qwik
