@@ -28,7 +28,7 @@ public class PageRestController {
     @GetMapping("/page")
     public Message getPage(@RequestParam(name = "id") String id) {
         if("anonymous_user" == UserRestController.status().getContent()) {
-            return new Message("Error", "Please login.");
+            return new Message("error", "Please login.");
         }
         // if id == all, get all pages
         List<Page> pageList = new ArrayList<Page>();
@@ -37,13 +37,13 @@ public class PageRestController {
         } else {
             pageList.add(pageMapper.getById(Integer.parseInt(id)));
         }
-        return new Message("Success", pageList);
+        return new Message("success", pageList);
     }
 
     @PostMapping("/page")
     public Message postPage(@RequestParam Map<String, String> request) {
         if("anonymous_user" == UserRestController.status().getContent()) {
-            return new Message("Error", "Please login.");
+            return new Message("error", "Please login.");
         }
         Page page = new Page();
         page.setUserId(Integer.parseInt(request.get("user_id")));
@@ -53,13 +53,13 @@ public class PageRestController {
         page.setDatePublished(Integer.parseInt(request.get("date_published")));
         page.setDateModified(Integer.parseInt(request.get("data_modified")));
         pageMapper.add(page);
-        return new Message("Success", "Success");
+        return new Message("success", "Page added successfully.");
     }
 
     @PutMapping("/page")
     public Object putPage(@RequestParam Map<String, String> request) {
         if("anonymous_user" == UserRestController.status().getContent()) {
-            return new Message("Error", "Please login.");
+            return new Message("error", "Please login.");
         }
         Page page = new Page();
         page.setId(Integer.parseInt(request.get("id")));
@@ -70,16 +70,16 @@ public class PageRestController {
         page.setDatePublished(Integer.parseInt(request.get("date_published")));
         page.setDateModified(Integer.parseInt(request.get("data_modified")));
         pageMapper.updateById(page);
-        return new Message("Success", "Success");
+        return new Message("success", "Page updated successfully.");
     }
 
     @DeleteMapping("/page")
     public Message deletePage(@RequestParam(name = "id") int id) {
         if("anonymous_user" == UserRestController.status().getContent()) {
-            return new Message("Error", "Please login.");
+            return new Message("error", "Please login.");
         }
         pageMapper.deleteById(id);
-        return new Message("Success", "Delete successfully");
+        return new Message("success", "Page deleted successfully.");
     }
 
 }
