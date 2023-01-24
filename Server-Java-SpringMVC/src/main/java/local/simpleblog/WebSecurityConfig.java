@@ -18,7 +18,7 @@ public class WebSecurityConfig {
 		http
 			.cors().and().csrf().disable()
 			.authorizeHttpRequests((requests) -> requests
-				.antMatchers("/", "/index.html", "/page/**", "/api/user/**").permitAll()
+				.antMatchers("/", "/index.html", "/page/**", "/api/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.formLogin((form) -> form

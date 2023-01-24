@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import local.simpleblog.user.UserRestController;
 import local.simpleblog.Message;
 
 @RestController
@@ -26,6 +27,9 @@ public class PageRestController {
 
     @GetMapping("/page")
     public Message getPage(@RequestParam(name = "id") String id) {
+        if("anonymous_user" == UserRestController.status().getContent()) {
+            return new Message("Error", "Please login.");
+        }
         // if id == all, get all pages
         List<Page> pageList = new ArrayList<Page>();
         if (id.equals("all")) {
@@ -38,6 +42,9 @@ public class PageRestController {
 
     @PostMapping("/page")
     public Message postPage(@RequestParam Map<String, String> request) {
+        if("anonymous_user" == UserRestController.status().getContent()) {
+            return new Message("Error", "Please login.");
+        }
         Page page = new Page();
         page.setUserId(Integer.parseInt(request.get("user_id")));
         page.setUrl(request.get("url"));
@@ -51,6 +58,9 @@ public class PageRestController {
 
     @PutMapping("/page")
     public Object putPage(@RequestParam Map<String, String> request) {
+        if("anonymous_user" == UserRestController.status().getContent()) {
+            return new Message("Error", "Please login.");
+        }
         Page page = new Page();
         page.setId(Integer.parseInt(request.get("id")));
         page.setUserId(Integer.parseInt(request.get("user_id")));
@@ -65,6 +75,9 @@ public class PageRestController {
 
     @DeleteMapping("/page")
     public Message deletePage(@RequestParam(name = "id") int id) {
+        if("anonymous_user" == UserRestController.status().getContent()) {
+            return new Message("Error", "Please login.");
+        }
         pageMapper.deleteById(id);
         return new Message("Success", "Delete successfully");
     }

@@ -51,13 +51,16 @@ public class UserRestController {
     }
 
     @GetMapping("/user")
-    public Message status() {
+    public static Message status() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String loggedUsername = "";
         if (principal instanceof UserDetails) {
             loggedUsername = ((UserDetails)principal).getUsername();
         } else {
             loggedUsername = principal.toString();
+        }
+        if("anonymousUser" == loggedUsername) {
+            loggedUsername = "anonymous_user";
         }
         return new Message("info", loggedUsername);
     }
