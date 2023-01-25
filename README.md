@@ -37,16 +37,20 @@ User login, logout, page management, client-side rendering and fetching data fro
 ### Server
 
 - [ ] C#
+- [ ] Go
 - [x] Java
+- [ ] PHP
 - [ ] Python
-- [ ] Typescript
 - [ ] Ruby
 - [ ] Rust
-- [ ] Go
+- [ ] Typescript
 
 ### Client
 
+- [ ] C#
+- [ ] Electron
+- [ ] Qwik
 - [ ] React
 - [ ] Solid
 - [ ] Svelte
-- [ ] Qwik
+- [ ] Tauri
