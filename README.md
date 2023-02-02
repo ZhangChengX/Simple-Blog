@@ -8,14 +8,13 @@ A simple blog using various languages and frameworks for testing and learning pu
 | /page             | Get       |           | html     | Display all pages. |
 | /page/[id\|url]   | Get       |           | html     | Display page by id or display page by url if id is not digital. |
 | ---               |           |           |          |             |
-| /api/page         | Get       | id        | json     | Return a page by id, or return all pages if id equal to all. |
-| /api/page         | Put       | data      | json     | Add a new page. |
-| /api/page         | Update    | id        | json     | Update a page by id. |
-| /api/page         | Delete    | id        | json     | Delete a page by id. |
+| /api/page         | Get       | id, token | json     | Return a page by id, or return all pages if id equal to all. |
+| /api/page         | Put       | data, token | json     | Add a new page. |
+| /api/page         | Update    | data, token | json     | Update a page by id. |
+| /api/page         | Delete    | id, token | json     | Delete a page by id. |
 | ---               |           |           |          |             |
-| /api/user         | Get       |           | json     | Return username if the current user is authorized, otherwise return anonymous. |
-| /api/user/login   | Get       | username and password | json     | Login with username and password. |
-| /api/user/logout  | Get       |           | json     | Logout.     |
+| /api/user/login   | Get       | username and password | json     | Login with username and password, return JWT token. |
+| /api/user/logout  | Get       | username  | json     | Logout.     |
 
 - /page/** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Display server-side rendering html page.
 - /api/** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Return json data.
@@ -38,9 +37,11 @@ User login, logout, page management, client-side rendering and fetching data fro
 
 - [ ] C#
 - [ ] Go
+- [ ] Haskell
 - [x] Java
+- [ ] Lisp
 - [ ] PHP
-- [ ] Python
+- [x] Python
 - [ ] Ruby
 - [ ] Rust
 - [ ] Typescript
@@ -50,7 +51,8 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [ ] C#
 - [ ] Electron
 - [ ] Qwik
-- [ ] React
+- [x] React
 - [ ] Solid
 - [ ] Svelte
 - [ ] Tauri
+- [ ] Unity
