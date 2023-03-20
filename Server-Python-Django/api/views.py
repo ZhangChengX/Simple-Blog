@@ -95,6 +95,7 @@ def delete(request):
 	Page.objects.filter(id=request_data['id']).delete()
 	return JsonResponse({'type': 'success', 'content': 'Page deleted successfully.'})
 
+@csrf_exempt
 def login(request):
 	request_data = request.GET
 	try:
@@ -105,6 +106,7 @@ def login(request):
 	token = jwt.encode({'user_id': user_data.id, 'expiry': datetime.timestamp(datetime.utcnow()) + 60 * 3}, settings.SECRET_KEY, algorithm='HS256')
 	return JsonResponse({'type': 'success', 'content': token})
 
+@csrf_exempt
 def logout(request):
 	request_data = request.GET
 	if 'token' not in request_data or not verify(request_data['token']):

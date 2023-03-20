@@ -17,8 +17,8 @@
       <li>Title: {{page.title}}</li>
       <li>Content: {{page.content}}</li>
       <li>UserId: {{page.user_id}}</li>
-      <li>Date Published: {{ page.date_published|timestamp_to_datetime|date:"Y-m:d H:i" }}</li>
-      <li>Date Modified: {{ page.date_modified|timestamp_to_datetime|date:"Y-m:d H:i" }}</li>
+      <li>Date Published: {{ page.date_published|timestamp_to_datetime|date:"Y-m-d H:i" }}</li>
+      <li>Date Modified: {{ page.date_modified|timestamp_to_datetime|date:"Y-m-d H:i" }}</li>
     </ul>
     {% endfor %}
     <a href="/"> < Home Page </a>
