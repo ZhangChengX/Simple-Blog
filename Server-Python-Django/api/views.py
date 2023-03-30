@@ -4,6 +4,7 @@ from django.conf import settings
 from django.apps import apps
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
+import json
 import jwt
 
 Page = apps.get_model('page', 'Page')
@@ -58,8 +59,8 @@ def put(request):
 	request_data = request.GET
 	if 'token' not in request_data or not verify(request_data['token']):
 		return JsonResponse({'type': 'error', 'content': 'Please login.'})
-	data = QueryDict(request.body)
-	page_detail = Page.objects.get(id=data.get('id'))
+	page_detail = Page.objects.get(id=request_data['id'])
+	data = json.loads(request.body).get('data')
 	if data.get('user_id'): page_detail.user_id = data.get('user_id')
 	if data.get('url'): page_detail.url = data.get('url')
 	if data.get('title'): page_detail.title = data.get('title')
@@ -73,14 +74,15 @@ def post(request):
 	request_data = request.GET
 	if 'token' not in request_data or not verify(request_data['token']):
 		return JsonResponse({'type': 'error', 'content': 'Please login.'})
-	data = request.POST
+	# data = request.POST
+	data = json.loads(request.body).get('data')
 	new_page = Page(
 		user_id=data.get('user_id'),
 		url=data.get('url'),
 		title=data.get('title'),
 		content=data.get('content'),
 		date_published=data.get('date_published'),
-		date_modified=data.get('date_modified')
+		date_modified=data.get('date_published')
 		)
 	new_page.save()
 	if new_page.id:
