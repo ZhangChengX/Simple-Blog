@@ -60,7 +60,7 @@ def put(request):
 	if 'token' not in request_data or not verify(request_data['token']):
 		return JsonResponse({'type': 'error', 'content': 'Please login.'})
 	page_detail = Page.objects.get(id=request_data['id'])
-	data = json.loads(request.body).get('data')
+	data = json.loads(request.body)
 	if data.get('user_id'): page_detail.user_id = data.get('user_id')
 	if data.get('url'): page_detail.url = data.get('url')
 	if data.get('title'): page_detail.title = data.get('title')
@@ -75,7 +75,7 @@ def post(request):
 	if 'token' not in request_data or not verify(request_data['token']):
 		return JsonResponse({'type': 'error', 'content': 'Please login.'})
 	# data = request.POST
-	data = json.loads(request.body).get('data')
+	data = json.loads(request.body)
 	new_page = Page(
 		user_id=data.get('user_id'),
 		url=data.get('url'),
