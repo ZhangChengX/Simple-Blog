@@ -24,6 +24,10 @@ function PageList({component, setComponent, token}) {
     deletePage(id, token)
   }
 
+  // const delay = (time) => {
+  //   return new Promise(resolve => setTimeout(resolve, time));
+  // }
+
   const getPage = (id, token) => {
     const url = api.page + "?id=" + id + "&token=" + token
     axios.get(url).then((response) => {
@@ -62,13 +66,14 @@ function PageList({component, setComponent, token}) {
           content: response.data.content
         })
       } else {
+        setAlert({
+          isShow: true,
+          variant: "success",
+          heading: "Success",
+          content: response.data.content
+        })
+        // delay(3000)
         getPage('all', token)
-        // setAlert({
-        //   isShow: true,
-        //   variant: "success",
-        //   heading: "Success",
-        //   content: response.data.content
-        // })
       }
     }).catch(function (error) {
       setAlert({
