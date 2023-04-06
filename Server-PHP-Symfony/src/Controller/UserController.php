@@ -12,14 +12,14 @@ use App\Service\JwtService;
 
 class UserController extends AbstractController {
 
-    #[Route('/api/user')]
+    #[Route('/api/user/')]
     public function user(): Response {
         return new Response(
             '<html><body> Test Page </body></html>'
         );
     }
 
-    #[Route('/api/user/login', methods: ['GET'])]
+    #[Route('/api/user/login/', methods: ['GET'])]
     public function user_login(Request $request, EntityManagerInterface $entityManager, JwtService $jwtService): JsonResponse {
         $userRepository = $entityManager->getRepository(User::class);
         $data = array('type' => 'error', 'content' => 'Invalid Credentials provided.');
@@ -37,7 +37,7 @@ class UserController extends AbstractController {
         return $this->json(array('type' => 'success', 'content' => $token));
     }
 
-    #[Route('/api/user/logout')]
+    #[Route('/api/user/logout/')]
     public function user_logout(Request $request, JwtService $jwtService): JsonResponse {
         $token = $request->query->get('token');
         $key = $this->getParameter('env.secret');

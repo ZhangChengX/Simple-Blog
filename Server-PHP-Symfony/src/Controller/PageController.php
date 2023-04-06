@@ -13,7 +13,7 @@ use App\Service\JwtService;
 
 class PageController extends AbstractController {
 
-    #[Route('/page',  methods: ['GET'])]
+    #[Route('/page/',  methods: ['GET'])]
     public function page_list(EntityManagerInterface $entityManager): Response {
         $pages = $entityManager->getRepository(Page::class)->findAll();
         $data = [];
@@ -34,7 +34,7 @@ class PageController extends AbstractController {
         return $this->render('page_list.html.twig', $data);
     }
 
-    #[Route('/page/{id}',  methods: ['GET'])]
+    #[Route('/page/{id}/',  methods: ['GET'])]
     public function page_detail(string $id, EntityManagerInterface $entityManager): Response {
         $pageRepository = $entityManager->getRepository(Page::class);
         $userRepository = $entityManager->getRepository(User::class);
@@ -72,7 +72,7 @@ class PageController extends AbstractController {
         return $this->render('page_detail.html.twig', $data);
     }
 
-    #[Route('/api/page',  methods: ['GET'])]
+    #[Route('/api/page/',  methods: ['GET'])]
     public function get_page(Request $request, EntityManagerInterface $entityManager, JwtService $jwtService): JsonResponse {
         $data = array('type' => 'error', 'content' => '');
         if ('GET' != $request->getMethod()) {
@@ -123,7 +123,7 @@ class PageController extends AbstractController {
         return $this->json($data);
     }
 
-    #[Route('/api/page',  methods: ['POST'])]
+    #[Route('/api/page/',  methods: ['POST'])]
     public function post_page(Request $request, EntityManagerInterface $entityManager, JwtService $jwtService): JsonResponse {
         $data = array('type' => 'error', 'content' => '');
         if ('POST' != $request->getMethod()) {
@@ -156,7 +156,7 @@ class PageController extends AbstractController {
         return $this->json($data);
     }
 
-    #[Route('/api/page',  methods: ['PUT'])]
+    #[Route('/api/page/',  methods: ['PUT'])]
     public function put_page(Request $request, EntityManagerInterface $entityManager, JwtService $jwtService): JsonResponse {
         $data = array('type' => 'error', 'content' => '');
         if ('PUT' != $request->getMethod()) {
@@ -190,7 +190,7 @@ class PageController extends AbstractController {
         return $this->json($data);
     }
 
-    #[Route('/api/page',  methods: ['DELETE'])]
+    #[Route('/api/page/',  methods: ['DELETE'])]
     public function delete_page(Request $request, EntityManagerInterface $entityManager, JwtService $jwtService): JsonResponse {
         $data = array('type' => 'error', 'content' => '');
         if ('DELETE' != $request->getMethod()) {
