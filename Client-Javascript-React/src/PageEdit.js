@@ -82,6 +82,11 @@ function PageEdit({component, setComponent, token}) {
   const updatePage = () => {
     const dateModified = Date.now()
     const apiUrl = api.page + "?id=" + id + "&token=" + token
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
     const data = {
         url: url,
         title: title,
@@ -89,7 +94,7 @@ function PageEdit({component, setComponent, token}) {
         user_id: userId,
         date_modified: dateModified
       }
-    axios.put(apiUrl, data)
+    axios.put(apiUrl, data, config)
     .then(function (response) {
       if(response.data.type === "error") {
         setAlert({
@@ -119,6 +124,11 @@ function PageEdit({component, setComponent, token}) {
   const addPage = () => {
     const datePublished = Date.now()
     const apiUrl = api.page + "?token=" + token
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
     const data = {
         url: url,
         title: title,
@@ -126,7 +136,7 @@ function PageEdit({component, setComponent, token}) {
         user_id: userId,
         date_published: datePublished
       }
-    axios.post(apiUrl, data)
+    axios.post(apiUrl, data, config)
     .then(function (response) {
       if(response.data.type === "error") {
         setAlert({

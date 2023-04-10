@@ -15,10 +15,7 @@ class JwtService {
     public function verify_token($token, $key): bool {
         $decoded_token = JWT::decode($token, new Key($key, 'HS256'));
         $decoded_array = (array) $decoded_token;
-        if ($decoded_array['expiry'] < time()) {
-            return false;
-        }
-        return true;
+        return $decoded_array['expiry'] > time();
     }
 
     public function refresh_token($token, $key, $expiry): string {
