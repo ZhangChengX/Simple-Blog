@@ -39,22 +39,25 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [x] Go
 - [ ] Haskell
 - [x] Java
+- [ ] Kotlin
 - [ ] Lisp
 - [x] PHP
 - [x] Python
 - [ ] Ruby
 - [ ] Rust
+- [ ] Swift
 - [ ] Typescript
 
 ### Client
 
 - [ ] Electron
-- [ ] NET MAUI
+- [ ] MAUI
 - [ ] Qt
 - [ ] Qwik
 - [x] React
 - [ ] Solid
 - [ ] Svelte
+- [ ] SwiftUI
 - [ ] Tauri
 - [ ] Unity
 - [ ] WASM
