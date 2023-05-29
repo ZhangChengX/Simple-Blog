@@ -11,8 +11,8 @@ A simple blog using various languages and frameworks for testing and learning pu
 | ---                  |        |           |          |             |
 | /api/page/**         | REST   |           | json     | Can only be accessed by authorized user. |
 | /api/page/{?id,token}| Get    |           | json     | Return a page by id, or return all pages if id equal to all. |
-| /api/page/{?token}.  | Post   | page data | json     | Add a new page. |
-| /api/page/{?id,token}| Put    | page data | json     | Update a page by id. |
+| /api/page/{?token}.  | Post   | json      | json     | Add a new page. |
+| /api/page/{?id,token}| Put    | json      | json     | Update a page by id. |
 | /api/page/{?id,token}| Delete |           | json     | Delete a page by id. |
 | ---                  |        |           |          |             |
 | /api/user/login/{?username,password}| Get |  | json     | Login with username and password, return JWT token. |
