@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:SimpleBlogMauiApp.ViewModels"
+             x:Class="SimpleBlogMauiApp.Views.EditPage"
+             Title="{Binding PageAction, StringFormat='{0} Page'}">
+    <ContentPage.BindingContext>
+        <viewModels:PageViewModel />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Spacing="20">
+        <Label BackgroundColor="#222" TextColor="White" Text="{Binding PageAction,StringFormat='{0} Page'}" HeightRequest="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        <Entry x:Name="Title" Text="{Binding Page.Title}" Placeholder="Title"  Margin="20, 0" />
+        <Entry x:Name="URL" Text="{Binding Page.Url}" Placeholder="URL" Margin="20, 0" />
+        <Editor x:Name="Content" Text="{Binding Page.Content}" HeightRequest="200" Placeholder="Content" Margin="20, 0" />
+        <Button x:Name="EditSubmit" Text="Edit" IsVisible="{Binding IsEdit}" Command="{Binding EditPageCommand}" CommandParameter="{Binding Page.Id}" Margin="20, 0" />
+        <Button x:Name="AddNewSubmit" Text="Add New" IsVisible="{Binding IsAddNew}" Command="{Binding AddPageCommand}" Margin="20, 0" />
+    </VerticalStackLayout>
+</ContentPage>

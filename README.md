@@ -33,7 +33,7 @@ User login, logout, page management, client-side rendering and fetching data fro
 
 ### Server
 
-- [ ] C#
+- [x] C#
 - [ ] C++
 - [ ] Elixir
 - [x] Go
@@ -51,7 +51,10 @@ User login, logout, page management, client-side rendering and fetching data fro
 ### Client
 
 - [ ] Electron
-- [ ] MAUI
+- [ ] Flutter
+- [ ] JavaFX
+- [ ] Jetpack Compose
+- [x] MAUI
 - [ ] Qt
 - [ ] Qwik
 - [x] React

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:SimpleBlogMauiApp.ViewModels"
+             x:Class="SimpleBlogMauiApp.Views.LoginPage">
+    <ContentPage.BindingContext>
+        <viewModels:UserViewModel />
+    </ContentPage.BindingContext>
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions=".20*, .80*" RowSpacing="20">
+        <Label Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="#222" TextColor="White" Text="User Login" HeightRequest="60" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+        
+        <Label Grid.Row="1" Grid.Column="0" Text = "Username:" HeightRequest="20" Margin="20, 0, 0, 0" />
+        <Entry Grid.Row="1" Grid.Column="1" x:Name = "Username" Placeholder="Enter username" Text="{Binding Username}" Margin="0, 0, 20, 0" />
+
+        <Label Grid.Row="2" Grid.Column="0" Text="Password:" HeightRequest="20" Margin="20, 0, 0, 0" />
+        <Entry Grid.Row="2" Grid.Column="1" x:Name = "Password" Placeholder="Enter password" Text="{Binding Password}" Margin="0, 0, 20, 0" />
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2" x:Name="LoginBtn" Text="Login" Command="{Binding LoginCommand}" Margin="20, 0" />
+    </Grid>
+</ContentPage>
