@@ -1,5 +1,5 @@
 # Simple-Blog
-A simple blog using various languages and frameworks for testing and learning purposes.
+A simple blog implemented using various languages and frameworks for testing and learning purposes.
 
 ## Server
 
@@ -31,16 +31,18 @@ User login, logout, page management, client-side rendering and fetching data fro
 
 ## Implementation
 
-### Server
+### Languages
 
 - [x] C#
 - [ ] C++
+- [ ] Dart
 - [ ] Elixir
 - [x] Go
 - [ ] Haskell
 - [x] Java
 - [ ] Kotlin
 - [ ] Lisp
+- [ ] Pascal
 - [x] PHP
 - [x] Python
 - [ ] Ruby
@@ -48,7 +50,7 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [ ] Swift
 - [ ] Typescript
 
-### Client
+### Frameworks
 
 - [ ] Electron
 - [ ] Flutter
