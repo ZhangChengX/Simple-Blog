@@ -49,20 +49,31 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [ ] Rust
 - [ ] Swift
 - [ ] Typescript
+- [ ] Zig
 
 ### Frameworks
 
+- [ ] Astro
+- [x] Django
 - [ ] Electron
+- [ ] Frappe
+- [x] Fiber
 - [ ] Flutter
 - [ ] JavaFX
 - [ ] Jetpack Compose
+- [ ] Lit
 - [x] MAUI
+- [ ] Plasmo
 - [ ] Qt
 - [ ] Qwik
 - [x] React
+- [ ] Remix
+- [ ] Slint
 - [ ] Solid
+- [x] Spring
 - [ ] Svelte
 - [ ] SwiftUI
+- [x] Symfony
 - [ ] Tauri
 - [ ] Unity
 - [ ] WASM
