@@ -35,7 +35,7 @@ User login, logout, page management, client-side rendering and fetching data fro
 
 - [x] C#
 - [ ] C++
-- [ ] Dart
+- [x] Dart
 - [ ] Elixir
 - [x] Go
 - [ ] Haskell
@@ -58,7 +58,7 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [ ] Electron
 - [ ] Frappe
 - [x] Fiber
-- [ ] Flutter
+- [x] Flutter
 - [ ] JavaFX
 - [ ] Jetpack Compose
 - [ ] Lit
@@ -66,6 +66,7 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [ ] Plasmo
 - [ ] Qt
 - [ ] Qwik
+- [ ] Rails
 - [x] React
 - [ ] Remix
 - [ ] Slint
