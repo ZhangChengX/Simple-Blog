@@ -1,4 +1,4 @@
-# Server-Go-Gin
+# Server-Go-Fiber
 - Web Framework: Fiber
 
 # Installation
