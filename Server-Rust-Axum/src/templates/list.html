@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/styles/normalize.css">
+  </head>
+  <body>
+    Page List <br>
+    {% for page in page_list %}
+    <ul>
+      <li>ID: <a href="/page/{{page.id}}"> {{page.id}} </a></li>
+      <li>URL: <a href="/page/{{page.url}}"> {{page.url}} </a></li>
+      <li>Title: {{page.title}}</li>
+      <li>Content: {{page.content}}</li>
+      <li>UserId: {{page.user_id}}</li>
+      <li>Date Published: {{ page.date_published|timestamp_to_datetime }}</li>
+      <li>Date Modified: {{ page.date_modified|timestamp_to_datetime }}</li>
+    </ul>
+    {% endfor %}
+    <a href="/"> < Home Page </a>
+	<!-- <script src="scripts/index.js"></script> -->
+  </body>
+</html>

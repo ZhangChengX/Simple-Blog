@@ -46,7 +46,7 @@ User login, logout, page management, client-side rendering and fetching data fro
 - [x] PHP
 - [x] Python
 - [ ] Ruby
-- [ ] Rust
+- [x] Rust
 - [ ] Swift
 - [ ] Typescript
 - [ ] Zig
@@ -54,18 +54,16 @@ User login, logout, page management, client-side rendering and fetching data fro
 ### Frameworks
 
 - [ ] Astro
+- [x] Axum
 - [x] Django
-- [ ] Electron
 - [ ] Frappe
 - [x] Fiber
 - [x] Flutter
-- [ ] JavaFX
 - [ ] Jetpack Compose
 - [ ] Lit
 - [x] MAUI
 - [ ] Plasmo
 - [ ] Qt
-- [ ] Qwik
 - [ ] Rails
 - [x] React
 - [ ] Remix
